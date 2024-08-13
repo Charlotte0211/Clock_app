@@ -10,17 +10,34 @@
   </head>
   <body>
     <div class="container">
-      <h1>World Clock</h1>
-    <form action="/send">
-      <select name="city" id="city">
-        <option value="">Select a city</option>
-        <option value="paris">Paris</option>
-        <option value="tokyo">Tokyo</option>
-        <option value="sydney">Sydney</option>
-      </select>
-    </form>
-        <script src="javascript/script.js"></script>
-    
-   <footer> This project was coded by Charlotte Riviere </footer>
+      <h1>World Clocks</h1>
+      <form action="/send">
+        <select name="city" id="city">
+          <option value="">Select a city</option>
+          <option value="paris">Paris</option>
+          <option value="tokyo">Tokyo</option>
+          <option value="sydney">Sydney</option>
+        </select>
+      </form>
+
+      <div class="city">
+        <div>
+          <h2>Madrid</h2>
+          <div class="date">13/08/24</div>
+        </div>
+
+        <div class="time">1:48</div>
+      </div>
+      <div class="city">
+        <h2>Edinburgh</h2>
+        <div class="date">13/08/24</div>
+        <div class="time">1:48 <small> AM</small></div>
+      </div>
+    </div>
+    <script src="javascript/script.js"></script>
+
+    <footer>
+      This project was coded by Charlotte Riviere and is open sourced on Github
+    </footer>
   </body>
 </html>
