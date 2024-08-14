@@ -2,7 +2,7 @@ function updateTime() {
   // MADRID
   let madridElement = document.querySelector("#madrid");
   let madridDateElement = madridElement.querySelector(".date");
-  let madridDate = moment.tz("Europe / Madrid").format("MMMM Do YYYY");
+  let madridDate = moment.tz("Europe/Madrid").format("MMMM Do YYYY");
   let madridTimeElement = madridElement.querySelector(".time");
   let madridTime = moment
     .tz("Europe/Madrid")
@@ -33,33 +33,29 @@ function updateTime() {
   sydneyDateElement.innerHTML = sydneyTimeZone.format("MMMM Do YYYY");
 }
 
+function showSelectedCity(event) {
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", "").split("/")[1];
+  let cityDate = moment().tz(cityTimeZone).format("MMMM Do YYYY");
+  let cityTime = moment()
+    .tz(cityTimeZone)
+    .format("hh:mm:ss [<small>]A[</small>]");
+
+  let citiesElement = document.querySelector("#cities");
+  citiesElement.innerHTML = `
+<div class="city">
+          <div>
+            <h2>${cityName}</h2>
+            <div class="date">${cityDate}</div>
+          </div>
+        <div class="time">${cityTime}</div>
+        </div>
+
+`;
+}
+
 updateTime();
 setInterval(updateTime, 1000);
 
-function showSelectedCountry(event) {
-  if (event.target.value.length > 0) {
-    if (event.target.value === "paris") {
-      alert(` It is ${parisTime} in Paris, France `);
-    }
-    if (event.target.value === "tokyo") {
-      alert(` It is ${tokyoTime} in Tokyo, Japan `);
-    }
-    if (event.target.value === "sydney") {
-      alert(` It is ${sydneyTime} in Sydney, Australia `);
-    }
-  }
-}
-
-let parisTime = moment.tz("Europe/Paris").format("dddd, MMMM D, YYYY hh:mm A");
-parisTime.innerHTML = ` It is ${parisTime} in Europe/Paris `;
-
-let tokyoTime = moment.tz("Asia/Tokyo").format("dddd, MMMM D, YYYY hh:mm A");
-tokyoTime.innerHTML = ` It is ${tokyoTime} in Asia/Tokyo `;
-
-let sydneyTime = moment
-  .tz("Australia/Sydney")
-  .format("dddd, MMMM D, YYYY hh:mm A");
-sydneyTime.innerHTML = ` It is ${sydneyTime} in Australia/Sydney`;
-
 let selectCity = document.querySelector("#city");
-selectCity.addEventListener("change", showSelectedCountry);
+selectCity.addEventListener("change", showSelectedCity);
