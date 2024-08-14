@@ -53,6 +53,9 @@ function showSelectedCity(event) {
           </div>
         <div class="time">${cityTime}</div>
         </div>
+        <a href="/">
+        <button class="button">All cities</button>
+        </a>
 
 `;
 }
