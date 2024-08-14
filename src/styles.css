@@ -10,10 +10,10 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
   padding: 12px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 40px 0px;
   border-radius: 10px;
-  font-family: "Monoton", sans-serif;
 }
 
 h1 {
@@ -27,20 +27,20 @@ h1 {
 h2 {
   margin: 0;
   font-size: 26px;
+  font-family: sans-serif;
 }
 
 select {
+  background-color: #e3f4f1;
+  position: relative;
+  border: thin solid black;
   width: 100%;
+  font-family: arial;
   font-size: 16px;
   border-radius: 9px;
   padding: 10px;
   margin: 0px auto 30px;
   cursor: pointer;
-}
-
-.custom-select {
-  position: relative;
-  font-family: arial;
 }
 
 .city {
@@ -60,7 +60,7 @@ select {
 }
 
 .time {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
 }
 
